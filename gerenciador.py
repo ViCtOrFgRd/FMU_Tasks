@@ -97,10 +97,11 @@ class TaskApp:
             self.task_table.delete(row)
 
         tasks = self.db.get_tasks()
-        for task in tasks:
+        for index, task in enumerate(tasks, start=1):  # Enumerar tarefas a partir de 1
             self.task_table.insert("", "end", values=(
-                task[0], task[1], task[2], task[3], task[4], task[5], datetime.strptime(task[6], "%Y-%m-%d").strftime("%d/%m/%Y")
+                index, task[1], task[2], task[3], task[4], task[5], datetime.strptime(task[6], "%Y-%m-%d").strftime("%d/%m/%Y")
             ))
+
 
     def filter_tasks(self, event=None):
         filter_status = self.filter_var.get()
@@ -109,9 +110,9 @@ class TaskApp:
         for row in self.task_table.get_children():
             self.task_table.delete(row)
 
-        for task in tasks:
+        for index, task in enumerate(tasks, start=1):  # Enumerar tarefas filtradas
             self.task_table.insert("", "end", values=(
-                task[0], task[1], task[2], task[3], task[4], task[5], datetime.strptime(task[6], "%Y-%m-%d").strftime("%d/%m/%Y")
+                index, task[1], task[2], task[3], task[4], task[5], datetime.strptime(task[6], "%Y-%m-%d").strftime("%d/%m/%Y")
             ))
 
     def open_task_window(self, title, task=None):

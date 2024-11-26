@@ -72,7 +72,7 @@
  [],
  False,
  False,
- 1732583788,
+ 1732586935,
  [('runw.exe',
    'C:\\Users\\K2ONDELLLAB\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit-intel\\runw.exe',
    'EXECUTABLE')],
